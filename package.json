@@ -1,0 +1,33 @@
+{
+  "name": "cyberhub",
+  "version": "1.0.0",
+  "description": "Node.js Express Login and Registration example",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server",
+    "dev": "nodemon server"
+  },
+  "keywords": [
+    "node.js",
+    "express",
+    "jwt",
+    "login",
+    "registration",
+    "rest api",
+    "authentication",
+    "authorization",
+    "mysql"
+  ],
+  "author": "bezkoder",
+  "license": "ISC",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "cookie-session": "^2.0.0",
+    "cors": "^2.8.5",
+    "express": "^4.18.2",
+    "jsonwebtoken": "^9.0.0",
+    "mysql2": "^2.3.3",
+    "nodemon": "^3.1.4",
+    "sequelize": "^6.31.1"
+  }
+}
