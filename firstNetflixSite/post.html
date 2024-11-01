@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Blog</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .container {
+            width: 80%;
+            margin: 0 auto;
+        }
+        header {
+            background-color: #333;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+        }
+        nav {
+            background-color: #444;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+        }
+        nav a {
+            color: white;
+            padding: 10px;
+            text-decoration: none;
+            display: inline-block;
+        }
+        main {
+            padding: 20px;
+        }
+        .card {
+            background-color: white;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            border-radius: 8px;
+        }
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+        }
+        .buttons {
+            position: relative;
+            margin-top: 10px;
+        }
+        .buttons button {
+            padding: 10px;
+            margin-right: 5px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        .buttons button:hover {
+            background-color: #0056b3;
+        }
+        .image-upload img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin-top: 10px;
+        }
+        .like{
+            background-color: rgb(47, 20, 225)!important;
+        }
+        /* .buttons span{
+            position: relative;
+            top: 0;
+            right: 0;
+            width: 25px;
+            height: 25px;
+            background-color: red;
+            color: white;
+            border-radius: 100%;
+            padding: 3px 5px;
+            font-size: 10px;
+        } */
+        .buttons button{
+            position: relative;
+        }
+        .buttons button::after{
+            content: '3';
+            position: absolute;
+            top: -4px;
+            right: -4px;
+            width: 15px;
+            height: 15px;
+            background-color: red;
+            color: white;
+            border-radius: 50%;
+            /* padding: 3px 5px; */
+            font-size: 12px;
+        }
+        section.comments{
+            display: flex;
+            flex-direction: column;
+        }
+        #comments{
+            display: flex;
+            flex-direction: column;
+            border: 1px solid #cdcdcd;
+            border-radius: 10px;
+            margin: 10px 0px;
+            padding: 10px;
+            box-shadow: 0px 4px 4px #cdcdcd;
+        }
+        #comments > div:first-child{
+            display: flex;
+            justify-content: start;
+            align-items: center;
+        }
+        #comments > div:first-child h3{
+            margin-left: 10px;
+        }
+        #profile{
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+        }
+        #profile > img{
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+        }
+        #comment-box{
+            position: relative;
+            width: 100%;
+            height: 300px;
+            color: red;
+            text-wrap: wrap;
+            overflow: wrap;
+            text-overflow: clip;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Welcome to My Blog</h1>
+        </div>
+    </header>
+    <nav>
+        <div class="container">
+            <a href="#">Home</a>
+            <a href="#">About</a>
+            <a href="#">Contact</a>
+        </div>
+    </nav>
+    <main class="container">
+        <!-- Filter post from backend: hbs, pug, ejs -->
+        <div class="card">
+            <!-- <article id="article">
+                <h2>Another Blog Post</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vehicula, erat ut pulvinar gravida, ex risus hendrerit sapien, sed tempor mauris sapien sit amet odio.</p>
+                <div class="image-upload">
+                    <img src="./AA1nlWW5.jpg" alt="Another Blog Image">
+                </div>
+                <div class="buttons">
+                    <button id="liked" class="" onclick="likePost()">Like</button>
+                </div>
+                <div class="buttons">
+                    <textarea rows="5" cols="70" id="comment" placeholder="write a comment"></textarea>
+                    <button onclick="commentPost()">Comment</button>
+                </div>
+                <section class="comments">
+                   <div id="comments">
+                    <div>
+                        <div id="profile"><img src="./IMG_3187.png" alt="profile"></div>
+                        <h3>Ahmed Rightous <br> <span style="color: #cdcdcd; font-size: 12px;">4 minutes ago</span></h3>
+                    </div>
+                    <div>
+                        <article>
+                             <p id="comment-box">${comment.value}</p>
+                        </article>
+                    </div>
+                </div>
+                </section>
+            </article> -->
+        </div>
+    </main>
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 My Blog</p>
+        </div>
+    </footer>
+    <script>
+        const liked = document.querySelector('#liked')
+        // alert('You commented on this post!');
+        const comment = document.querySelector('#comment')
+        // const comment_box = document.querySelector('#comment-box');
+        const comment_output = document.querySelector('.comments')
+        function likePost() {
+            // alert('You liked this post!');
+            if(liked.innerHTML == "Like"){
+                liked.innerHTML = "Unlike";
+                console.log(liked.after());
+                
+            }else{
+                liked.innerHTML = "Like"
+            }
+
+            // testing
+            liked.classList.toggle("like")
+        }
+        function commentPost() {
+            
+            // fetching from json or api
+            // const fetch_comments = async () => {
+            //     let data = await fetch("./data/comments.json")
+            //     data = await data.then(res => res.json())
+            //     data = await data.then(data => data)
+
+            //     return data
+            // }
+
+            // console.log(fetch_comments());
+            
+            // if(comment.value.trim() == '') {
+            //     alert('Comment box is empty')
+            // }else{
+            //     console.log(comment.value);
+            //     comment_output.innerHTML += `
+            //          <div id="comments">
+            //             <div>
+            //                 <div id="profile"><img src="./IMG_3187.png" alt="profile"></div>
+            //                 <h3>Ahmed Rightous <br> <span style="color: #cdcdcd; font-size: 12px;">4 minutes ago</span></h3>
+            //             </div>
+            //             <div>
+            //                 <article>
+            //                      <p id="comment-box">${comment.value}</p>
+            //                 </article>
+            //             </div>
+            //         </div>
+            //     `;
+                
+                // comment.value = "";
+                // assignment, comment if more than 100CHAR, add read more
+                
+            // }
+        }
+
+        window.onload = () => {
+            console.log("window is ready");
+
+            const card = document.querySelector(".card")
+            
+            // loading previous posts
+            const posts = [];
+            fetch("http://localhost:7000/posts")
+            .then(res => res.json())
+            .then(data => {
+                // console.log(data);
+                // serving the html code from DB
+                let posts = data.payload
+                // console.log(posts);
+                posts.forEach(post => {
+                    
+                    card.innerHTML += `
+                        <article id="article">
+                        <h2>${post.username}</h2>
+                        <p>${post.text}</p>
+                        <div class="image-upload">
+                            <img src="./${post.post_img}" alt="Another Blog Image">
+                        </div>
+                        <div class="buttons">
+                            <button id="liked" class="" onclick="likePost()">Like</button>
+                        </div>
+                        <div class="buttons">
+                            <textarea rows="5" cols="70" id="comment" placeholder="write a comment"></textarea>
+                            <button onclick="commentPost()">Comment</button>
+                        </div>
+                        <section class="comments">
+                        <div id="comments">
+                            <div>
+                                <div id="profile"><img src="./IMG_3187.png" alt="profile"></div>
+                                <h3>Ahmed Rightous <br> <span style="color: #cdcdcd; font-size: 12px;">4 minutes ago</span></h3>
+                            </div>
+                            <div>
+                                <article>
+                                    <p id="comment-box">${post.comments[0].comment_id}</p>
+                                </article>
+                            </div>
+                        </div>
+                        </section>
+                    </article>
+                    `;
+                });
+                
+            })
+            .catch(error => {
+                console.error('Error fetching posts:', error);
+            });
+
+            // console.log(comments);
+            // console.log(posts.length, posts);
+
+
+            // for (let i = 0; i < posts.length; i++) {
+            //     const element = posts[i];
+            //     console.log("posts", element);
+            // }
+            
+            // if(posts){
+            //     posts.forEach(comm => {
+            //         posts.innerHTML += `
+            //                 <div id="comments">
+            //                     <div>
+            //                         <div id="profile"><img src="${comm.dp}" alt="profile"></div>
+            //                         <h3>${comm.userId} <br> <span style="color: #cdcdcd; font-size: 12px;">${comm.time}</span></h3>
+            //                     </div>
+            //                     <div>
+            //                         <article>
+            //                             <p id="comment-box">${comm.value}</p>
+            //                         </article>
+            //                     </div>
+            //                 </div>
+            //             `;
+            //     })
+            // }else{
+            //     console.log("o posts");
+                
+            // }
+        }
+    </script>
+</body>
+</html>

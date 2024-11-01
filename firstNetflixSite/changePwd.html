@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Change Password</title>
+    <style>
+        *,*::after, *::before{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 16px;
+        }
+        main{
+            width: 90%;
+            margin: 20px auto;
+        }
+        main section{
+            /* background-color: antiquewhite; */
+            /* color: whitesmoke; */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 50vh;
+        }
+        main section form{
+            padding: 10px;
+            border: 1px solid #333;
+            width: 60%;
+            height: 100%;
+            border-radius: 10px;
+        }
+        main section form label, main section form input{
+            width: 100%;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <section>
+            <h2>Change Password</h2>
+            <form action="/resetPassword" method="post">
+                <label for="">Email or Username</label>
+                <input type="text" id="email" placeholder="Enter email or username">
+                <label for="">Old Password</label>
+                <input type="password" name="pwd" id="pwd" placeholder="Enter old Password">
+                <label for="">New password</label>
+                <input type="password" name="new_pwd" id="new_pwd" placeholder="Enter New password">
+                <label for="">Confirm New password</label>
+                <input type="password" name="c_new_pwd" id="c_new_pwd" placeholder="Confirm New Password">
+                <button type="button" id="btn">Change Password</button>
+            </form>
+        </section>
+    </main>
+
+    <script>
+        const email = document.querySelector("#email")
+        const pwd = document.querySelector("#pwd")
+        const new_pwd = document.querySelector("#new_pwd")
+        const c_new_pwd = document.querySelector("#c_new_pwd")
+        const btn = document.querySelector("#btn")
+
+        btn.addEventListener("click", (e) => {
+            e.preventDefault()
+
+            fetch('/resetpassword', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ email: email.value, pwd: pwd.value, new_pwd: new_pwd.value, c_new_pwd: c_new_pwd.value}),
+            })
+            .then(response => response.json())
+            .then(data => {
+                // document.getElementById('message').innerText = data.msg;
+                // window.location.href = "http://localhost:7000/welcome.html"
+                console.log(data);
+                alert(data.msg);
+                
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+        })
+    </script>
+</body>
+</html>

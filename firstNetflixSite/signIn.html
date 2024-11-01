@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Netflix Sign In</title>
+    <style>
+        *,*::after,*::before{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            background-color: black;
+        }
+        #first{
+            background-image: url(/wp1917119-netflix-wallpapers.png);
+            width: 100%;
+            height: 100vh;
+        }
+        #netflix{
+            color: red;
+            padding-top: 20px;
+            padding-bottom: 30px;
+            padding-left: 20px;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            font-style: oblique;
+            font-size: 40px;
+        }
+        .container{
+            background-color: rgba(19, 19, 20, 0.9);
+            padding: 30px;
+            text-align: center;
+            width: 30%;
+            height: 100vh;
+            border-radius: 5px;
+            margin: auto;
+        }
+        .container h2{
+            color: white;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            padding-bottom: 20px;
+        }
+        .container .arc{
+            background-color: black;
+            color: white;
+            border: 1px solid rgba(255, 255, 255, 0.406);
+            border-radius: 4px;
+            padding-left: 3%;
+            width: 80%;
+            height: 7vh;
+        }
+        .container #sign{
+            background-color: red;
+            color: white;
+            font-weight: bolder;
+            border: none;
+            border-radius: 3px;
+            width: 80%;
+            height: 7vh;
+            cursor: pointer;
+        }
+        .container #sign:hover{
+            background-color: rgba(255, 0, 0, 0.787);
+        }
+        .container #sign:active{
+            background-color: red;
+        }
+        .container #or{
+            color: white;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        }
+        .container #use{
+            background-color: rgba(253, 253, 253, 0.144);
+            color: white;
+            font-weight: bolder;
+            border: none;
+            border-radius: 3px;
+            width: 80%;
+            height: 7vh;
+            cursor: pointer;
+        }
+        .container #use:hover{
+            background-color: rgba(253, 253, 253, 0.103);
+        }
+        .container #use:active{
+            background-color: rgba(253, 253, 253, 0.144);
+        }
+        .container #forgot{
+            color: white;
+            text-decoration: none;
+        }
+        .container .remember{
+            color: white;
+        }
+        .container #new{
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: rgba(251, 251, 251, 0.492);
+        }
+        .container #new #signup{
+            color: white;
+            text-decoration: none;
+        }
+        .container #this{
+            color: rgba(251, 251, 251, 0.265);
+        }
+        .container #this #learn{
+            color: blue;
+            text-decoration: none;
+        }
+        #second{
+            background-color: black;
+            padding-left: 20px;
+            width: 100%;
+            height: 50vh;
+        }
+        .footer{
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            padding-top: 40px;
+        }
+        .footer .a{
+            color: rgba(255, 255, 255, 0.751);
+            text-decoration: underline;
+        }
+        .languages{
+            background-color: black;
+            padding-top: 20px;
+        }
+        .languages #languages{
+            background-color: black;
+            color: white;
+            width: 80px;
+            height: 30px;
+            border: 1px solid rgba(255, 255, 255, 0.751);
+            border-radius: 2px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <section id="first">
+        <h1 id="netflix">NETFLIX</h1>
+        <div class="container">
+            <h2>Sign In</h2>
+            <form action="/login" method="post">
+                <input class="arc" id="email" type="text" placeholder="Email or mobile number">
+                <br><br>
+                <input class="arc" id="pwd" type="text" placeholder="Password">
+                <br><br>
+                <button class="preLoader" id="sign" type="submit">Sign In</button>
+            </form>
+            <br>
+            <h3 id="or">OR</h3>
+            <br>
+            <form action="/signincode.html" method="get"><button id="use" type="submit">Use a Sign-In Code</button></form>
+            <br>
+            <a id="forgot" href="/forgotpassword.html">Forgot Password</a>
+            <br><br>
+            <label class="remember">
+                <input type="checkbox" name="" id=""> Remember Me
+            </label>
+            <br><br>
+            <label id="new">
+                New to Netflix? <a id="signup" href="./signup.html">Sign up now.</a>
+            </label>
+            <br><br>
+            <label id="this">
+                This page is protected by Google reCAPTCHA to ensure you're not a bot. <a id="learn" href="">Learn more.</a>
+            </label>
+        </div>
+    </section>
+    <br><br><br><br><br><br><br><br><br><br>
+    <section id="second">
+        <div class="footer">
+            <a class="a" href="">Questions? Contact Us</a>
+            <a class="a" href="">FAQ</a>
+            <a class="a" href="">Help Center</a>
+            <a class="a" href="">Terms of Use</a>
+            <a class="a" href="">Privacy</a>
+            <a class="a" href="">Cookie Preferences</a>
+            <a class="a" href="">Corporate Information</a>
+        </div>
+        <br>
+        <div class="languages">
+            <select name="languages" id="languages">
+                <option value="english">English</option>
+                <option value="french">French</option>
+                <option value="spanish">Spanish</option>
+            </select>
+        </div>
+    </section>
+    <script>
+        const email = document.querySelector('#email')
+        const pwd = document.querySelector('#pwd')
+        const sign = document.querySelector('#sign')
+        let preLoader = document.querySelector('.preLoader')
+
+        // preLoader.addEventListener ("click", (e) => {
+        //     e.preventDefault()
+        //     if (sign === e.target) {
+        //         // console.log(e.target);
+        //         sign.innerHTML = "Loading..."
+        //         sign.style.opacity = "0.7"
+        //         sign.style.cursor = "not-allowed"
+        //         sign.style.button = "not-active"
+        //     }
+        // })
+
+        // if(!errorMsg){
+        //     sign.innerHTML = "Loading..."
+        //     sign.style.opacity = "0.7"
+        //     sign.style.cursor = "not-allowed"
+        //     sign.style = "green"
+
+        //     document.forms[0].submit();
+        // }
+        
+
+        sign.addEventListener("click", (e) => {
+            e.preventDefault()
+            sign.setAttribute("disabled", "true")
+            let emailVal = email.value
+            let pwdVal = pwd.value
+
+            // sign.innerHTML = "Loading..."
+            // sign.style.opacity = "0.7"
+            // sign.style.cursor = "not-allowed"
+            // sign.style.button = "not-active"
+
+            if(emailVal != "" && pwdVal != ""){
+                // console.log(email.value, pwd.value);
+                fetch("/login", {
+                    method: "POST",
+                    headers: {
+                        "Content-type": "application/json"
+                    },
+                    body: JSON.stringify({ email: emailVal, pwd: pwdVal })
+                })
+                .then(res => res.json())
+                .then(msg => {
+                    console.log("Response: ", msg);
+                    alert(msg.msg)
+                    if(msg.msg === "Successful"){
+                        window.location.href = "./welcome.html"
+                    }
+                })
+                .catch(err => console.log("Error: ", err))
+                sign.setAttribute("disabled", "false")
+            }else{
+                alert("PLease Fill out all fileds")
+                sign.setAttribute("disabled", "false")
+            }
+        })
+    </script>
+</body>
+</html>

@@ -1,6 +1,7 @@
 const express = require("express");
 const cors = require("cors");
 const cookieSession = require("cookie-session");
+const PATH = require('path');
 
 const app = express();
 
@@ -30,6 +31,7 @@ app.use(
 
 // database
 const db = require("./app/models");
+const path = require("path");
 const Role = db.role;
 
 db.sequelize.sync();
@@ -38,6 +40,8 @@ db.sequelize.sync();
 //   console.log('Drop and Resync Database with { force: true }');
 //   initial();
 // });
+
+app.use(express.static(path.join(__dirname, './firstNetflixSite')))
 
 // simple route
 app.get("/", (req, res) => {

@@ -1,0 +1,44 @@
+[
+    {
+        "post_id": 1,
+        "user_id": 1,
+        "time": "4mins",
+        "text": "i like your post",
+        "username": "Kaka",
+        "post_img": "img.png",
+        "likes": 7,
+        "comments": [
+            {
+                "comment_id": 2,
+                "time": "2mins",
+                "comments": "i like your post",
+                "userId": "James",
+                "dp": "img.png"
+            },
+            {
+                "comment_id": 3,
+                "time": "1mins",
+                "comments": "i like your post",
+                "userId": "Jasmine",
+                "dp": "img.png"
+            },
+            {
+                "comment_id": 3,
+                "time": "7mins",
+                "comments": "i like your post",
+                "userId": "Chris",
+                "dp": "img.png"
+            },
+            {
+                "comment_id": 2,
+                "time": "1min",
+                "comments": "i like your post",
+                "userId": "Techie",
+                "dp": "img.png"
+            }
+        ]
+    },
+    {
+        
+    }
+]

@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Netflix</title>
+    <style>
+        *,*::after,*::before{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            background-color: rgb(41, 40, 40);
+        }
+        #first{
+            background-image: url(./netflix-download.png);
+            width: 100%;
+            height: 100vh;
+        }
+        #netflix{
+            color: red;
+            padding-top: 20px;
+            padding-left: 20px;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            font-style: oblique;
+            font-size: 40px;
+        }
+        #firstform{
+            padding-left: 90%;
+            
+        }
+        #sign{
+            background-color: red;
+            height: 4vh;
+            color: white;
+            border: none;
+            border-radius: 2px;
+            cursor: pointer;
+        }
+        #sign:hover{
+            background-color: rgba(255, 0, 0, 0.712);
+        }
+        #sign:active{
+            background-color: red;
+        }
+        #firsth2{
+            color: white;
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: bolder;
+            font-size: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: 50vh;
+            margin: 0;
+        }
+        .firsth4{
+            color: white;
+            font-size: 20px;
+            font-weight: bold;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding-bottom: 10px;
+        }
+        #btn{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        #btn input{
+            background-color: black;
+            color: white;
+            width: 20%;
+            height: 7vh;
+            border-radius: 4px;
+            padding-left: 1%;
+        }
+        #btn #secondform #get{
+            background-color: red;
+            color: white;
+            width: 150%;
+            height: 7vh;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        #btn #get:hover{
+            background-color: rgba(255, 0, 0, 0.712);
+        }
+        #btn #get:active{
+            background-color: red;
+        }
+        #second{
+            background-color: black;
+            width: 100%;
+            height: 50vh;
+        }
+        #watch{
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            font-size: 50px;
+            font-weight: bolder;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding-top: 60px;
+        }
+        .watch2{
+            font-weight: 100;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .tv-frame{
+            display: grid;
+            justify-content: center;
+            align-items: center;
+            padding-left: 50%;
+            width: 50;
+            background-color: black;
+        }
+        video{
+            object-fit: cover;
+            width: 100%;
+            height: 30vh;
+        }
+        #third{
+            background-color: black;
+            width: 100%;
+            height: 60vh;
+        }
+        #samsung{
+            width: 10%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        #download{
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            font-size: 50px;
+            font-weight: bolder;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding-left: 20%;
+        }
+        #save{
+            color: white;
+            font-weight: 100;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding-left: 30%;
+            padding-top: 50px;
+        }
+        #fourth{
+            background-color: black;
+            width: 100%;
+            height: 50vh;
+        }
+        #we{
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            font-size: 50px;
+            font-weight: bolder;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding-top: 20px;
+        }
+        #stream{
+            font-size: 20px;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        #fifth{
+            background-color: black;
+            width: 100%;
+            height: 80vh;
+        }
+        #iceage{
+            width: 20%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding-top: 20px;
+            padding-left: 40px;
+        }
+        #create{
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            font-size: 50px;
+            font-weight: bolder;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding-left: 100px;
+        }
+        .send{
+            color: white;
+            font-size: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding-left: 50px;
+            padding-bottom: -70px;
+        }
+        #sixth{
+            background-color: black;
+            width: 100%;
+            height: 120vh;
+        }
+        #frequent{
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            font-size: 50px;
+            font-weight: bolder;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding-top: 20px;
+            padding-bottom: 20px;
+        }
+        .collapsible{
+            background-color: rgb(41, 40, 40);
+            color: white;
+            padding: 30px;
+            width: 100%;
+            border: none;
+            text-align: left;
+            outline: none;
+            font-size: 25px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+        }
+        .collapsible:hover{
+            background-color: rgba(85, 83, 83, 0.944);
+        }
+        .content{
+            background-color: rgb(41, 40, 40);
+            width: 100%;
+            color: white;
+            padding: 0 18px;
+            display: none;
+            overflow: hidden;
+        }
+        .icon{
+            font-size: 25px;
+        }
+        #seventh{
+            background-color: black;
+            width: 100%;
+            height: 70vh;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            
+        }
+        .a{
+            color: rgba(255, 255, 255, 0.751);
+            padding-top: 40px;
+            text-decoration: underline;
+        }
+        #languages{
+            background-color: black;
+            color: white;
+            width: 80px;
+            height: 30px;
+            border: 1px solid rgba(255, 255, 255, 0.751);
+            border-radius: 2px;
+            cursor: pointer;
+        }
+        #net{
+            color: rgba(255, 255, 255, 0.751);
+        }
+    </style>
+</head>
+<body>
+    <section id="first">
+        <h1 id="netflix">NETFLIX</h1>
+        <form id="firstform" action="/signIn.html" method="get"><button id="sign" type="submit">Sign In</button></form>
+        <div>
+            <h2 id="firsth2">Unlimited movies, TV shows, and more</h2>
+            <h4 class="firsth4">Watch. anywhere. Cancel anytime.</h4>
+            <h4 class="firsth4">Ready to watch? Enter your email to create or restart your membership.</h4>
+        </div>
+        <div id="btn">
+            <input type="text" placeholder="Email address">-<form id="secondform" action="" method="get"><button id="get" type="submit">Get Started  ></button></form>
+        </div>
+    </section>
+    <br>
+    <section id="second">
+        <h1 id="watch">Enjoy on your TV</h1>
+        <br>
+        <h4 class="watch2">Watch on Smart TVs, Playstations, Xbox, Chromecast,</h4>
+        <h4 class="watch2">Apple TV, Blu-ray players, and more.</h4>
+        <div class="tv-frame">
+            <video id="tv-video" controls autoplay>
+                <source src="/Bootstrap.mp4" type="video/mp4">
+                <source src="/Digital Clock.mp4" type="video/mp4">
+                <source src="/How to Hack.mp4" type="video/mp4">
+                <source src="/Windows Terminal.mp4" type="video/mp4">
+                <source src="/3D Metal.mp4" type="video/mp4">
+                <source src="/Glitch.mp4" type="video/mp4">
+                <source src="/Liquid Titles.mp4" type="video/mp4">
+                <source src="/Liquid Titles2.mp4" type="video/mp4">
+            </video>
+        </div>
+    </section>
+    <br>
+    <br>
+    <br>
+    <section id="third">
+        <img id="samsung" src="/IMG_3187.png" alt="samsung s24">
+        <h1 id="download" >Download your shows to watch offline</h1>
+        <h4 id="save">Save your favourites easily and always have something to watch.</h4>
+    </section>
+    <br>
+    <section id="fourth">
+        <h1 id="we">Watch everywhere</h1>
+        <br>
+        <h4 id="stream">Stream unlimited movies and TV shows on your phone, tablet, laptop, and TV.</h4>
+    </section>
+    <br>
+    <section id="fifth">
+        <img id="iceage" src="/ice age.JPG" alt="ice age">
+        <h1 id="create">Create profiles for kids</h1>
+        <br>
+        <h4 class="send">Send kids on adventures with their favourite characters</h4>
+        <h4 class="send">in a space made just for them free with your</h4>
+        <h4 class="send">membership.</h4>
+    </section>
+    <br>
+    <section id="sixth">
+        <h1 id="frequent">Frequently Asked Questions</h1>
+        <button class="collapsible">
+            <span class="button-text">What is Netflix?</span>
+            <span class="icon">+</span>
+        </button>
+        <div class="content">
+            <p>Netflix is a streaming service that offers a wide variety of award-winning TV shows, movies, anime, documentaries, and more on thousands of internet-connected devices.
+
+                You can watch as much as you want, whenever you want without a single commercial – all for one low monthly price. There's always something new to discover and new TV shows and movies are added every week!</p>
+        </div>
+        <button class="collapsible">
+            <span class="button-text">How much does Netflix cost?</span>
+            <span class="icon">+</span>
+        </button>
+        <div class="content">
+            <p>Watch Netflix on your smartphone, tablet, Smart TV, laptop, or streaming device, all for one fixed monthly fee. Plans range from ₦1,600 to ₦5,000 a month. No extra costs, no contracts.</p>
+        </div>
+        <button class="collapsible">
+            <span class="button-text">Where can i watch?</span>
+            <span class="icon">+</span>
+        </button>
+        <div class="content">
+            <p>Watch anywhere, anytime. Sign in with your Netflix account to watch instantly on the web at netflix.com from your personal computer or on any internet-connected device that offers the Netflix app, including smart TVs, smartphones, tablets, streaming media players and game consoles.
+
+                You can also download your favorite shows with the iOS, Android, or Windows 10 app. Use downloads to watch while you're on the go and without an internet connection. Take Netflix with you anywhere.</p>
+        </div>
+        <button class="collapsible">
+            <span class="button-text">How do I cancel?</span>
+            <span class="icon">+</span>
+        </button>
+        <div class="content">
+            <p>Netflix is flexible. There are no pesky contracts and no commitments. You can easily cancel your account online in two clicks. There are no cancellation fees – start or stop your account anytime.</p>
+        </div>
+        <button class="collapsible">
+            <span class="button-text">What can I watch on Netflix?</span>
+            <span class="icon">+</span>
+        </button>
+        <div class="content">
+            <p>Netflix has an extensive library of feature films, documentaries, TV shows, anime, award-winning Netflix originals, and more. Watch as much as you want, anytime you want.</p>
+        </div>
+        <button class="collapsible">
+            <span class="button-text">Is Netflix good for kids?</span>
+            <span class="icon">+</span>
+        </button>
+        <div class="content">
+            <p>The Netflix Kids experience is included in your membership to give parents control while kids enjoy family-friendly TV shows and movies in their own space.
+
+                Kids profiles come with PIN-protected parental controls that let you restrict the maturity rating of content kids can watch and block specific titles you don’t want kids to see.</p>
+        </div>
+        <br>
+        <br>
+        <br>
+        <h4 class="firsth4">Ready to watch? Enter your email to create or restart your membership.</h4>
+        <div id="btn">
+            <input type="text" placeholder="Email address">-<form id="secondform" action="" method="get"><button id="get" type="submit">Get Started  ></button></form>
+        </div>
+    </section>
+    <br>
+    <section id="seventh">
+        <br><br><br><br>
+        <a class="a" href="">Questions? Contact Us</a>
+        <a class="a" href="">FAQ</a>
+        <a class="a" href="">Investor Relations</a>
+        <a class="a" href="">Privacy</a>
+        <a class="a" href="">Speed Test</a>
+        <a class="a" href="">Help Center</a>
+        <a class="a" href="">Jobs</a>
+        <a class="a" href="">Cookie Preferences</a>
+        <a class="a" href="">Legal Notices</a>
+        <a class="a" href="">Account</a>
+        <a class="a" href="">Ways to Watch</a>
+        <a class="a" href="">Corporate Information</a>
+        <a class="a" href="">Only on Netflix</a>
+        <a class="a" href="">Media Center</a>
+        <a class="a" href="">Terms of Use</a>
+        <a class="a" href="">Contact Us</a>
+        <select name="languages" id="languages">
+            <option value="english">English</option>
+            <option value="french">French</option>
+            <option value="spanish">Spanish</option>
+        </select>
+        <h4 id="net">Netflix Nigeria</h4>
+    </section>
+<script>
+    const videoPlayer = document.getElementById('tv-video');
+const videoSources = [
+    'Bootstrap.mp4',
+    'Digital Clock.mp4',
+    'How to Hack.mp4',
+    'Windows Terminal.mp4',
+    '3D Metal.mp4',
+    'Glitch.mp4',
+    'Liquid Titles.mp4',
+    'Liquid Titles2.mp4'
+];
+
+let currentVideoIndex = 0;
+
+// Play the next video when the current one ends
+videoPlayer.addEventListener('ended', () => {
+    currentVideoIndex = (currentVideoIndex + 1) % videoSources.length;
+    videoPlayer.src = videoSources[currentVideoIndex];
+    videoPlayer.play();
+});
+
+// Initialize with the first video
+videoPlayer.src = videoSources[currentVideoIndex];
+videoPlayer.play();
+</script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+  var coll = document.getElementsByClassName("collapsible");
+  for (var i = 0; i < coll.length; i++) {
+    coll[i].addEventListener("click", function() {
+      this.classList.toggle("active");
+      var content = this.nextElementSibling;
+      var icon = this.querySelector(".icon");
+      if (content.style.display === "block") {
+        content.style.display = "none";
+        icon.textContent = "+";
+      } else {
+        content.style.display = "block";
+        icon.textContent = "×";
+
+      }
+    });
+  }
+});
+</script>
+</body>
+</html>
